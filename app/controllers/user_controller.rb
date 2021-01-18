@@ -10,6 +10,8 @@ class UserController < ActionController::Base
         redirect_to new_user_path
     end
 
+    def show
+    end
     private
 
     def user_params
