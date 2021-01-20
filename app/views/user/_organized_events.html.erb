@@ -1,0 +1,3 @@
+<% @events.each do |event| %>
+    <div><%=link_to event.description,event_path(event) %></div>
+<%end%>

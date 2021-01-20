@@ -1,3 +1,8 @@
 <h1>User page</h1>
 
 <p>Hi <%= current_user.username %></p>
+
+<%= link_to 'create event', new_user_event_path(current_user.id) %>
+
+<h3>My events</h3>
+<%= render 'organized_events',locals: {events: current_user.events} %>
