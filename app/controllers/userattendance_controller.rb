@@ -1,0 +1,2 @@
+class UserattendanceController < ApplicationController
+end
