@@ -1,19 +1,15 @@
 module ApplicationHelper
-    def isLoggedIn?
-        return true if session[:user_id] != nil
-        return false
-    end
+  def logged_in?
+    return true unless session[:user_id].nil?
 
-    def current_user_id
-        session[:user_id]
-    end
+    false
+  end
 
-    def current_user
-        if isLoggedIn?
-            return User.find(session[:user_id])
-        else
-            return nil
-        end
-    end
+  def current_user_id
+    session[:user_id]
+  end
 
+  def current_user
+    User.find(session[:user_id]) if isLoggedIn?
+  end
 end
