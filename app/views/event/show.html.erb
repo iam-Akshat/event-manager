@@ -1,5 +1,5 @@
 <h1>EVENT PAGE</h1>
-<p>Host:-<%= link_to @event.username,user_path(@event.creator_id)%></P>
+<p>Host:-<%= link_to @event.creator.username,user_path(@event.creator_id)%></P>
 <div><%= @event.description %></div>
 
 <h3>List of Attendees</h3>

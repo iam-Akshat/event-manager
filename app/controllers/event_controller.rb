@@ -17,12 +17,10 @@ class EventController < ActionController::Base
     end
   end
 
-  # rubocop:disable Layout/LineLength
   def show
-    @event = Event.joins('INNER JOIN users ON users.id = events.creator_id').where('events.id = :event_id ',
-                                                                                   { event_id: params[:id] }).select('users.username,events.*').take
+    @event = Event.find(params[:id])
   end
-  # rubocop:enable
+
   def index
     @events = Event.all
   end
