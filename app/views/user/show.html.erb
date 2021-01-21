@@ -6,3 +6,7 @@
 
 <h3>My events</h3>
 <%= render 'organized_events',locals: {events: current_user.events} %>
+<h3>Previously attended events</h3>
+<%= render 'organized_events',locals: { events:current_user.attended_events.filter{|e| e.date_of_event < Date.current}} %>
+<%= render 'organized_events',locals: { events:current_user.attended_events.filter{|e| e.date_of_event > Date.current}} %>
+<h3>Upcoming events</h3>
