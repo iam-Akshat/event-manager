@@ -26,6 +26,6 @@ class EventController < ActionController::Base
 
     private
     def event_params
-        params.require(:event).permit(:description)
+        params.require(:event).permit(:description,:date_of_event)
     end
 end
