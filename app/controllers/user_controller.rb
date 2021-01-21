@@ -7,7 +7,7 @@ class UserController < ActionController::Base
   def create
     user = User.new(user_params)
     user.save
-    redirect_to new_user_path
+    redirect_to sign_in_path
   end
 
   def show

@@ -3,7 +3,7 @@
 <p>Hi <%= current_user.username %></p>
 
 <%= link_to 'create event', new_user_event_path(@user) %>
-
+<%= link_to 'logout',logout_path %>
 <h3>My events</h3>
 <%= render 'organized_events',locals: {events: @events} %>
 <h3>Previously attended events</h3>
