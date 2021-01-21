@@ -1,3 +1,10 @@
 <h1>EVENT PAGE</h1>
 <p>Host:-<%= link_to @event.username,user_path(@event.creator_id)%></P>
 <div><%= @event.description %></div>
+
+<h3>List of Attendees</h3>
+<ul>
+    <% @event.attendees.each  do |attendee|%>
+        <li><%= link_to attendee.username,user_path(attendee) %></li>
+    <% end %>
+</ul>
