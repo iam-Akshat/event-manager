@@ -2,11 +2,19 @@
 
 <p>Hi <%= current_user.username %></p>
 
-<%= link_to 'create event', new_user_event_path(current_user.id) %>
+<%= link_to 'create event', new_user_event_path(@user) %>
 
 <h3>My events</h3>
-<%= render 'organized_events',locals: {events: current_user.events} %>
+<%= render 'organized_events',locals: {events: @events} %>
 <h3>Previously attended events</h3>
-<%= render 'organized_events',locals: { events:current_user.attended_events.filter{|e| e.date_of_event < Date.current}} %>
+<%@user.attended_events.each do |e|%>
+    <% if e.date_of_event < Date.current%>
+    <%= link_to e.description,event_path(e) %>
+    <% end %>
+<% end %>
 <h3>Upcoming events</h3>
-<%= render 'organized_events',locals: { events:current_user.attended_events.filter{|e| e.date_of_event > Date.current}} %>
+<%@user.attended_events.each do |e|%>
+    <% if e.date_of_event > Date.current%>
+    <%= link_to e.description,event_path(e) %>
+    <% end %>
+<% end %>
