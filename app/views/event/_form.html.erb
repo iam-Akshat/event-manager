@@ -1,7 +1,7 @@
 <%=form_with(model: @event,url:@which_path) do |f|%>
     <%= f.label :description,"describe your event" %>
     <br>
-    <%= f.text_field :description,,required: true%>
+    <%= f.text_field :description,required: true%>
     <br>
     <%= f.label :date_of_event,"When is it happening?" %>
     <%= f.date_field :date_of_event,required: true %>
