@@ -9,7 +9,7 @@ class UserattendanceController < ApplicationController
         flash[:notice] = 'Invited'
         begin
           UserAttendance.create!(attendee: invited_user, attended_event: event)
-          flash[:notice] = invited
+          flash[:notice] = 'Invited'
         rescue StandardError => e
           puts e
           flash[:error] = 'Internal Error'
