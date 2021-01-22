@@ -1,7 +1,6 @@
 class Event < ApplicationRecord
-
   validates :creator, presence: true
-  validates :description,:date_of_event,presence: true
+  validates :description, :date_of_event, presence: true
 
   scope :past, ->(current_date = Date.current) { where('date_of_event < ?', current_date) }
   scope :upcoming, ->(current_date = Date.current) { where('date_of_event > ?', current_date) }
