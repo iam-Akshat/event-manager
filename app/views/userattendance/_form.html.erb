@@ -1,0 +1,5 @@
+<%= form_with url:event_invite_path(@event) do |f|%>
+    <%= f.label :username,"Enter the username of the person you want to invite",required: true %>
+    <%= f.text_field :username%>
+    <%= f.submit "submit" %>
+<% end %>
