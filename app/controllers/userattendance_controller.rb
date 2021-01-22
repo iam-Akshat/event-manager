@@ -1,7 +1,7 @@
 class UserattendanceController < ApplicationController
     def create
         event = Event.find(params[:event_id])
-        if event.creator_id = session[:user_id]
+        if event.creator_id == session[:user_id]
             invited_user = User.find_by(username: params[:username])
             if invited_user.nil?
                 flash[:error] = "User not found"

@@ -1,4 +1,4 @@
-class EventController < ActionController::Base
+class EventController < ApplicationController
   def new
     @event = Event.new
     @which_path = user_event_index_path

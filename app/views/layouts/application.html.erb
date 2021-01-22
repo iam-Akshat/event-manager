@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <% if flash[:notice] || flash[:error] %>
+      <p style="color:<%= flash[:notice] ? "green" : "red" %>"><%= flash[:notice] || flash[:error ] %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

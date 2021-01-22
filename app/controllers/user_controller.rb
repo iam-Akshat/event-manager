@@ -1,4 +1,4 @@
-class UserController < ActionController::Base
+class UserController < ApplicationController
   def new
     @user = User.new
     @which_path = user_index_path

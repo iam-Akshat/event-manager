@@ -1,6 +1,8 @@
 <h1>EVENT PAGE</h1>
 <p>Host:-<%= link_to @event.creator.username,user_path(@event.creator_id)%></P>
-<%=render 'userattendance/form' %>
+<% if session[:user_id]==@event.creator_id %>
+    <%=render 'userattendance/form' %>
+<% end %>
 <div><%= @event.description %></div>
 
 <h3>List of Attendees</h3>
