@@ -7,7 +7,7 @@ class UserattendanceController < ApplicationController
                 flash[:error] = "User not found"
             else
                 flash[:notice] = "Invited"
-                attendance = UserAttendance.create(atendee:invited_user,attended_event:event)
+                attendance = UserAttendance.create!(attendee:invited_user,attended_event:event)
             end
             redirect_to event_path(event)
         else
