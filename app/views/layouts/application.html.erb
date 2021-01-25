@@ -29,7 +29,7 @@
     </ul>
   </nav>
   <main>
-    <h2>Hi <%= current_user.username %></h2>
+    <h2>Hi <%= session[:user_id] ? current_user.username : "Anonymous"  %></h2>
     <% if flash[:notice] || flash[:error] %>
       <p style="color:<%= flash[:notice] ? "green" : "red" %>"><%= flash[:notice] || flash[:error ] %></p>
     <% end %>
