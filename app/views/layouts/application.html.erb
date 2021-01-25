@@ -11,6 +11,22 @@
   </head>
 
   <body>
+
+  <nav>
+  <div class="logo">EVENT MANAGER</div>
+  <ul class="nav-items">
+      <li> <%= link_to 'All events', event_index_path %> </li>
+      
+      <% if session[:user_id] %>
+        <li><%= link_to 'Home',user_path(session[:user_id]) %></li>
+        <li><%= link_to 'Logout', logout_path%>
+      <% else %>
+        <li><%= link_to 'Sign In',sign_in_path %></li>
+        <li><%= link_to 'Sign Up',sign_up_path %></li>
+      <% end %>
+    
+    </ul>
+  </nav>
     <% if flash[:notice] || flash[:error] %>
       <p style="color:<%= flash[:notice] ? "green" : "red" %>"><%= flash[:notice] || flash[:error ] %></p>
     <% end %>

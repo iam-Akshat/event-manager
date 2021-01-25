@@ -1,4 +1,4 @@
-class SessionController < ActionController::Base
+class SessionController < ApplicationController
   def new
     @user = User.new
     @which_path = login_path
