@@ -1,20 +1,20 @@
-<h1>User page</h1>
+<h1>Event dairy of @<%=@user.username%></h1>
 
-<p>Hi <%= current_user.username %></p>
-
-<%= link_to 'create event', new_user_event_path(@user) %>
-<%= link_to 'logout',logout_path %>
 <h3>My events</h3>
 <%= render 'organized_events',locals: {events: @events} %>
 <h3>Previously attended events</h3>
+<ul>
 <%@user.attended_events.each do |e|%>
     <% if e.date_of_event < Date.current%>
-    <%= link_to e.description,event_path(e) %>
+    <li><%= link_to e.description,event_path(e) %></li>
     <% end %>
 <% end %>
+</ul>
 <h3>Upcoming events</h3>
+<ul>
 <%@user.attended_events.each do |e|%>
     <% if e.date_of_event > Date.current%>
-    <%= link_to e.description,event_path(e) %>
+    <li><%= link_to e.description,event_path(e) %></li>
     <% end %>
 <% end %>
+</ul>

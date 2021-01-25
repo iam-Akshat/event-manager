@@ -20,6 +20,7 @@
       <% if session[:user_id] %>
         <li><%= link_to 'Home',user_path(session[:user_id]) %></li>
         <li><%= link_to 'Logout', logout_path%>
+        <li><%= link_to 'Create event', new_user_event_path(session[:user_id]) %> </li>
       <% else %>
         <li><%= link_to 'Sign In',sign_in_path %></li>
         <li><%= link_to 'Sign Up',sign_up_path %></li>
@@ -27,9 +28,13 @@
     
     </ul>
   </nav>
+  <main>
+    <h2>Hi <%= current_user.username %></h2>
     <% if flash[:notice] || flash[:error] %>
       <p style="color:<%= flash[:notice] ? "green" : "red" %>"><%= flash[:notice] || flash[:error ] %></p>
     <% end %>
     <%= yield %>
+  </main>
+  
   </body>
 </html>

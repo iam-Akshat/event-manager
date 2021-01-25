@@ -32,6 +32,13 @@ nav ul{
     width: 50%;
     justify-content: space-between;
 }
+ul{
+    list-style: none;
+}
 nav ul li{
     margin: 0.5rem 1rem;
+}
+
+main{
+    padding: 1rem 2rem;
 }
