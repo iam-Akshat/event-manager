@@ -29,7 +29,7 @@ RSpec.describe 'root page',type: :system do
           fill_in 'username',with: 'akshat'
           click_button 'Proceed'
           
-          expect(page.current_path).to eq(user_path(1))
+          expect(page.current_path).to eq(user_path(User.find_by(username: 'akshat').id))
         end
       it 'All Events link redirect to event_index_path' do
         visit root_path
