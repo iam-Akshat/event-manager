@@ -1,0 +1,16 @@
+<h1>Event dairy of @<%=@user.username%></h1>
+
+<h3>My events</h3>
+<%= render 'organized_events',locals: {events: @events} %>
+<h3>Previously attended events</h3>
+<ul>
+<% previous_events.each do |e| %>
+    <li><%= link_to e.description,event_path(e) %></li>
+<% end %>
+</ul>
+<h3>Upcoming events</h3>
+<ul>
+<% upcoming_events.each do |e|%>
+    <li><%= link_to e.description,event_path(e) %></li>
+<% end %>
+</ul>

@@ -1,24 +1,58 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Event_manager
 
-Things you may want to cover:
+> A basic event management website
 
-* Ruby version
+- Create users
+- login and logout
+- Create Events
+- see events of different users
+- invite others 
 
-* System dependencies
+## Built With
 
-* Configuration
+- Rails 
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Getting Started
 
-* ...
+- `git clone https://github.com/iam-Akshat/event-manager.git`
+- `cd event-manager`
+- `bundle install`
+- `rails db:migrate`
+- `rails s`
+
+### Prerequisites
+ - Ruby
+ - Rails
+
+## Authors
+
+👤 **Akshat Sethi**
+
+- GitHub: [@iam-akshat](https://github.com/iam-Akshat)
+- Twitter: [@akshatsethi](https://twitter.com/akshatsethi)
+- LinkedIn:[Akshat Sethi](https://linkedin.com/in/akshatsethi)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Inspired by [Odin Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
